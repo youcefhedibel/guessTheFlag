@@ -9,31 +9,38 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
-//            first method
-//            LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
+        VStack{
             
-//            second method
-//            LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: .white, location: 0.15),
-//                 Gradient.Stop(color: .black, location: 0.45)]), startPoint: .top, endPoint: .bottom)
+            Button("button 1"){ }
+                .buttonStyle(.bordered)
+            Button("button 2", role: .destructive){ }
+                .buttonStyle(.bordered)
+            Button("button 3", role: .cancel){ }
+                .buttonStyle(.borderedProminent)
+                .tint(.mint)
+            Button("button 4", role: .destructive){ }
+                .buttonStyle(.borderedProminent)
             
-//            third method
+            Button {
+                print("you clicked me !")
+            } label: {
+                Text("tap me")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(.red)
+                    
+            }
+            Button {
+                print("sam3Likooom")
+            } label: {
+                Label("edit", systemImage: "pencil")
+            }
             
-//            LinearGradient(gradient: Gradient(stops:
-//               [.init(color: .white, location: 0.15),
-//                .init(color: .black, location: 0.45)]), startPoint: .top, endPoint: .bottom)
-//
-            
-//            Radial gradient
-//
-//            RadialGradient(gradient: .init(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
-            
-//            Angular gradient
-            AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .black, .purple ]), center: .center)
-        
-
     } .ignoresSafeArea()
 }
+    func executeDelete (){
+        print("tatattaa")
+    }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
