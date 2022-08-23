@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@main
 struct Guess_the_flafApp: App {
     var body: some Scene {
         WindowGroup {
