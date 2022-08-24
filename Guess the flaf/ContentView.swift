@@ -22,16 +22,19 @@ struct ContentView: View {
                 
             VStack(spacing : 30){
                VStack{
-                        Text("Flag of")
-                        Text(countries[correctAnswer])
-               }.font(.system(size: 35))
-               .foregroundColor(.white)
+                        Text("Flag of").font(.subheadline.weight(.heavy))
+                   Text(countries[correctAnswer]).font(.largeTitle.weight(.semibold))
+                }
+               
+                    .foregroundColor(.white)
                     ForEach(0..<3){
                         number in Button {
                             flagTapped(number)
                 } label: {
                     Image(countries[number])
                         .renderingMode(.original)
+                        .clipShape(Capsule())
+                        .shadow(radius: 10)
                 }
                     }
             }
