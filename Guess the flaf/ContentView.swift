@@ -14,20 +14,22 @@ struct ContentView: View {
     var body: some View {
        
             
-            Button("TEST"){
+            Button("Show alert"){
                 showingAlert = true
             }.font(.system(size: 40))
-            .alert("this is alert message", isPresented: $showingAlert){
-                Button("OK"){
-                    
-                }
+            .alert("Important message", isPresented: $showingAlert){
+                Button("Delete", role: .destructive){}
+                Button("Cancel", role: .cancel ){}
+            } message: {
+                Text("Please read this message")
+            }
             }
            
             
     
 }
     
-}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
